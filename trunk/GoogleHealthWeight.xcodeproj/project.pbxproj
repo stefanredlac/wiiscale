@@ -96,8 +96,6 @@
 		825D9F0E108BD33C0009E075 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		825D9F0F108BD33C0009E075 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		825DAA15108C088F0009E075 /* GData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GData.xcodeproj; path = "../gdata-objectivec-client-read-only/Source/GData.xcodeproj"; sourceTree = SOURCE_ROOT; };
-		825DAA2C108C093D0009E075 /* buildCopyScript */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = buildCopyScript; sourceTree = "<group>"; };
-		825DAA30108C098D0009E075 /* buildStripHeaders */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = buildStripHeaders; sourceTree = "<group>"; };
 		825DAA96108C15C70009E075 /* weight.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = weight.xml; sourceTree = "<group>"; };
 		82CCFE63108ECF2100212CE5 /* mail-sent.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "mail-sent.aiff"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -164,7 +162,6 @@
 				825D9EFE108BD2E40009E075 /* wiiRemoteFramework */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
-				825DAA32108C099B0009E075 /* Scripts */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
 			);
@@ -227,15 +224,6 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		825DAA32108C099B0009E075 /* Scripts */ = {
-			isa = PBXGroup;
-			children = (
-				825DAA30108C098D0009E075 /* buildStripHeaders */,
-				825DAA2C108C093D0009E075 /* buildCopyScript */,
-			);
-			name = Scripts;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -243,12 +231,10 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "WiiScale" */;
 			buildPhases = (
-				825DAA2F108C095C0009E075 /* Copy GData.framework to BUILT_PRODUCTS_DIR */,
 				8D1107290486CEB800E47090 /* Resources */,
 				8D11072C0486CEB800E47090 /* Sources */,
 				8D11072E0486CEB800E47090 /* Frameworks */,
 				825DAA29108C08EE0009E075 /* CopyFiles */,
-				825DAA3C108C09CD0009E075 /* buildStripHeaders */,
 			);
 			buildRules = (
 			);
@@ -335,37 +321,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
-
-/* Begin PBXShellScriptBuildPhase section */
-		825DAA2F108C095C0009E075 /* Copy GData.framework to BUILT_PRODUCTS_DIR */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy GData.framework to BUILT_PRODUCTS_DIR";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = ./buildCopyScript;
-		};
-		825DAA3C108C09CD0009E075 /* buildStripHeaders */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = buildStripHeaders;
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = ./buildStripHeaders;
-		};
-/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		8D11072C0486CEB800E47090 /* Sources */ = {
