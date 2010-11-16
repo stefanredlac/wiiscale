@@ -14,52 +14,14 @@
 		825D9F06108BD2E40009E075 /* WiiRemoteDiscovery.m in Sources */ = {isa = PBXBuildFile; fileRef = 825D9F03108BD2E40009E075 /* WiiRemoteDiscovery.m */; };
 		825D9F0A108BD2FD0009E075 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825D9F09108BD2FD0009E075 /* IOBluetooth.framework */; };
 		825D9F10108BD33C0009E075 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825D9F0F108BD33C0009E075 /* AppController.m */; };
-		825DAA2A108C08F00009E075 /* GData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825DAA1E108C088F0009E075 /* GData.framework */; };
-		825DAA2B108C091A0009E075 /* GData.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 825DAA1E108C088F0009E075 /* GData.framework */; };
 		825DAA97108C15C70009E075 /* weight.xml in Resources */ = {isa = PBXBuildFile; fileRef = 825DAA96108C15C70009E075 /* weight.xml */; };
+		82AE8CD41292F616002789A1 /* GData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AE8B5A1292F4E0002789A1 /* GData.framework */; };
+		82AE8CF31292F764002789A1 /* GData.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82AE8B5A1292F4E0002789A1 /* GData.framework */; };
 		82CCFE64108ECF2100212CE5 /* mail-sent.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 82CCFE63108ECF2100212CE5 /* mail-sent.aiff */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
 		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
 		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		825DAA1D108C088F0009E075 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 825DAA15108C088F0009E075 /* GData.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F38F6A60B66E91D00B24B81;
-			remoteInfo = GDataFramework;
-		};
-		825DAA1F108C088F0009E075 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 825DAA15108C088F0009E075 /* GData.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F1C6E0F1027B3CE00B46459;
-			remoteInfo = GDataTouchStaticLib;
-		};
-		825DAA21108C088F0009E075 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 825DAA15108C088F0009E075 /* GData.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F14A9DD0B1276B70072EBB8;
-			remoteInfo = GDataUnitTests;
-		};
-		825DAA23108C088F0009E075 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 825DAA15108C088F0009E075 /* GData.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F85E018103B83B700B4C418;
-			remoteInfo = GDataIPhoneUnitTests;
-		};
-		825DAA25108C088F0009E075 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 825DAA15108C088F0009E075 /* GData.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 4F1AD9020B71603F00DC0485;
-			remoteInfo = DevelopmentTestTool;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		825DAA29108C08EE0009E075 /* CopyFiles */ = {
@@ -68,7 +30,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				825DAA2B108C091A0009E075 /* GData.framework in CopyFiles */,
+				82AE8CF31292F764002789A1 /* GData.framework in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -95,8 +57,8 @@
 		825D9F09108BD2FD0009E075 /* IOBluetooth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOBluetooth.framework; path = /System/Library/Frameworks/IOBluetooth.framework; sourceTree = "<absolute>"; };
 		825D9F0E108BD33C0009E075 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		825D9F0F108BD33C0009E075 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
-		825DAA15108C088F0009E075 /* GData.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GData.xcodeproj; path = "../gdata-objectivec-client-read-only/Source/GData.xcodeproj"; sourceTree = SOURCE_ROOT; };
 		825DAA96108C15C70009E075 /* weight.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = weight.xml; sourceTree = "<group>"; };
+		82AE8B5A1292F4E0002789A1 /* GData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GData.framework; path = "../gdata-objectivec-client-read-only/Source/build/Debug/GData.framework"; sourceTree = SOURCE_ROOT; };
 		82CCFE63108ECF2100212CE5 /* mail-sent.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "mail-sent.aiff"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8D1107320486CEB800E47090 /* WiiScale.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WiiScale.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,7 +69,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				825DAA2A108C08F00009E075 /* GData.framework in Frameworks */,
+				82AE8CD41292F616002789A1 /* GData.framework in Frameworks */,
 				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
 				825D9F0A108BD2FD0009E075 /* IOBluetooth.framework in Frameworks */,
 			);
@@ -130,6 +92,7 @@
 		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				82AE8B5A1292F4E0002789A1 /* GData.framework */,
 				825D9F09108BD2FD0009E075 /* IOBluetooth.framework */,
 				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
 			);
@@ -157,7 +120,6 @@
 		29B97314FDCFA39411CA2CEA /* GoogleHealthWeight */ = {
 			isa = PBXGroup;
 			children = (
-				825DAA15108C088F0009E075 /* GData.xcodeproj */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				825D9EFE108BD2E40009E075 /* wiiRemoteFramework */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
@@ -212,18 +174,6 @@
 			path = wiiRemoteFramework;
 			sourceTree = "<group>";
 		};
-		825DAA16108C088F0009E075 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				825DAA1E108C088F0009E075 /* GData.framework */,
-				825DAA20108C088F0009E075 /* libGDataTouchStaticLib.a */,
-				825DAA22108C088F0009E075 /* GDataUnitTests.octest */,
-				825DAA24108C088F0009E075 /* GDataIPhoneUnitTests.octest */,
-				825DAA26108C088F0009E075 /* DevelopmentTestTool */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -256,56 +206,12 @@
 			hasScannedForEncodings = 1;
 			mainGroup = 29B97314FDCFA39411CA2CEA /* GoogleHealthWeight */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 825DAA16108C088F0009E075 /* Products */;
-					ProjectRef = 825DAA15108C088F0009E075 /* GData.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				8D1107260486CEB800E47090 /* WiiScale */,
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		825DAA1E108C088F0009E075 /* GData.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = GData.framework;
-			remoteRef = 825DAA1D108C088F0009E075 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		825DAA20108C088F0009E075 /* libGDataTouchStaticLib.a */ = {
-			isa = PBXReferenceProxy;
-			fileType = archive.ar;
-			path = libGDataTouchStaticLib.a;
-			remoteRef = 825DAA1F108C088F0009E075 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		825DAA22108C088F0009E075 /* GDataUnitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GDataUnitTests.octest;
-			remoteRef = 825DAA21108C088F0009E075 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		825DAA24108C088F0009E075 /* GDataIPhoneUnitTests.octest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = GDataIPhoneUnitTests.octest;
-			remoteRef = 825DAA23108C088F0009E075 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		825DAA26108C088F0009E075 /* DevelopmentTestTool */ = {
-			isa = PBXReferenceProxy;
-			fileType = "compiled.mach-o.executable";
-			path = DevelopmentTestTool;
-			remoteRef = 825DAA25108C088F0009E075 /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		8D1107290486CEB800E47090 /* Resources */ = {
@@ -367,6 +273,7 @@
 					"\"$(SRCROOT)/../gdata-objectivec-client-read-only/Source/build/Release\"",
 					"\"$(SRCROOT)/../../Downloads/gdata-objectivec-client-1/Source/build/Debug\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../gdata-objectivec-client-read-only/Source/build/Debug\"",
 				);
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_FIX_AND_CONTINUE = YES;
@@ -389,6 +296,7 @@
 					"$(inherited)",
 					"\"$(SRCROOT)/../gdata-objectivec-client-read-only/Source/build/Release\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../gdata-objectivec-client-read-only/Source/build/Debug\"",
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
