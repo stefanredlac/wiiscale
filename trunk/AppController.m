@@ -220,8 +220,6 @@
 #pragma mark Magic?
 
 - (void)expansionPortChanged:(NSNotification *)nc{
-	
-	NSLog(@"expansionPortChanged");
 
 	WiiRemote* tmpWii = (WiiRemote*)[nc object];
 	
@@ -238,16 +236,12 @@
 #pragma mark WiiRemoteDelegate methods
 
 - (void) buttonChanged:(WiiButtonType) type isPressed:(BOOL) isPressed
-{
-	NSLog(@"buttonChanged: %i, %i", type, isPressed);
-	
+{	
 	[self doTare:self];
 }
 
 - (void) wiiRemoteDisconnected:(IOBluetoothDevice*) device
-{
-	NSLog(@"wiiRemoteDisconnected");
-	
+{	
 	[spinner stopAnimation:self];
 	[bbstatus setStringValue:@"Disconnected"];
 	
@@ -256,44 +250,11 @@
 
 #pragma mark WiiRemoteDelegate methods (optional)
 
-- (void) analogButtonChanged:(WiiButtonType) type amount:(unsigned short) press {
-	NSLog(@"analogButtonChanged: %i, %i", type, press);
-}
-
-- (void) accelerationChanged:(WiiAccelerationSensorType) type accX:(unsigned short) accX accY:(unsigned short) accY accZ:(unsigned short) accZ {
-	NSLog(@"accelerationChanged: %i, %i, %i", accX, accY, accZ);
-}
-
-- (void) batteryLevelChanged:(double) level {
-	NSLog(@"batteryLevelChanged: %f", level);
-}
-
-- (void) gotMiiData: (Mii*) mii_data_buf at: (int) slot {
-	NSLog(@"gotMiiData");
-}
-
-- (void) irPointMovedX:(float) px Y:(float) py {
-	NSLog(@"irPointMovedX");
-}
-
-- (void) joyStickChanged:(WiiJoyStickType) type tiltX:(unsigned short) tiltX tiltY:(unsigned short) tiltY {
-	NSLog(@"joyStickChanged");
-}
-
-// raw values from the Balance Beam
-/*- (void) balanceBeamChangedTopRight:(int)topRight
-                        bottomRight:(int)bottomRight
-                            topLeft:(int)topLeft
-                         bottomLeft:(int)bottomLeft {
-	//NSLog(@"balanceBeamChangedTopRight: %i, %i, %i, %i", topRight, bottomRight, topLeft, bottomLeft);
-}*/
-
 // cooked values from the Balance Beam
 - (void) balanceBeamKilogramsChangedTopRight:(float)topRight
                                  bottomRight:(float)bottomRight
                                      topLeft:(float)topLeft
                                   bottomLeft:(float)bottomLeft {
-	//NSLog(@"balanceBeamKilogramsChangedTopRight: %f, %f, %f, %f", topRight, bottomRight, topLeft, bottomLeft);
 	
 	lastWeight = topRight + bottomRight + topLeft + bottomLeft;
 	
@@ -320,9 +281,7 @@
 		avgWeight = sum / 100.0;
 		float var = sum_sqrs / 100.0 - (avgWeight * avgWeight);
 		float std_dev = sqrt(var);
-		
-		//NSLog(@"%4.1f kg (%f)", avgWeight, std_dev);
-		
+
 		if(!sent)
 			[status setStringValue:@"Please hold still..."];
 		else
@@ -340,41 +299,19 @@
 		[status setStringValue:@"Tap the button to tare, then step on..."];
 	}
 
-	//[weight setStringValue:[NSString stringWithFormat:@"%4.1f kg", avgWeight]];
-	//[weight setStringValue:[NSString stringWithFormat:@"%4.1f kg\t(%4.1f lbs)", trueWeight, (trueWeight) * 2.20462262]];
 	[weight setStringValue:[NSString stringWithFormat:@"%4.1fkg  %4.1flbs", MAX(0.0, trueWeight), MAX(0.0, (trueWeight) * 2.20462262)]];
-		
-	//[weight setStringValue:[NSString stringWithFormat:@"%4.1fkg\t%4.1flbs", avgWeight, (avgWeight) * 2.20462262]];
-}
-
-- (void) rawIRData: (IRData[4]) irData {
-	NSLog(@"rawIRData");
-}
-
-- (void) wiimoteWillSendData; {
-	//NSLog(@"wiimoteWillSendData");
-}
-
-- (void) wiimoteDidSendData {
-	//NSLog(@"wiimoteDidSendData");
 }
 
 #pragma mark WiiRemoteDiscoveryDelegate methods
 
 - (void) WiiRemoteDiscovered:(WiiRemote*)wiimote {
-	NSLog(@"WiiRemoteDiscovered");
-
-	//[discovery stop];	
 	
 	[wii release];
 	wii = [wiimote retain];
 	[wii setDelegate:self];
-	//[wii setExpansionPortEnabled:YES];
-	//[wii setLEDEnabled1:YES enabled2:NO enabled3:NO enabled4:YES];
-	//[wii setMotionSensorEnabled:YES];	
+
 	[spinner stopAnimation:self];
 	[bbstatus setStringValue:@"Connected"];
-	//[wii setLEDEnabled1:YES enabled2:YES enabled3:YES enabled4:YES];
 	
 	[status setStringValue:@"Tap the button to tare, then step on..."];
 }
@@ -392,6 +329,6 @@
 }
 
 - (void) willStartWiimoteConnections {
-	NSLog(@"willStartWiimoteConnections");
+
 }
 @end
