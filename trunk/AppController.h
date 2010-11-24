@@ -11,7 +11,7 @@
 	IBOutlet NSTextField* weight;
 	IBOutlet NSTextField* status;
 	IBOutlet NSTextField* bbstatus;
-	IBOutlet NSProgressIndicator* weightProgress;
+	IBOutlet NSLevelIndicator* weightIndicator;
 	IBOutlet NSPopUpButton* profilesPopUp;
 	IBOutlet NSMenuItem* fileConnect;
 	IBOutlet NSMenuItem* fileTare;
@@ -33,6 +33,7 @@
 	float weightSamples[100];
 	int weightSampleIndex;
 	BOOL sent;
+	float height_cm;
 }
 
 - (IBAction)doDiscovery:(id)sender;
