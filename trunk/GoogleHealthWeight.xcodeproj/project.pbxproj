@@ -15,6 +15,7 @@
 		825D9F0A108BD2FD0009E075 /* IOBluetooth.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 825D9F09108BD2FD0009E075 /* IOBluetooth.framework */; };
 		825D9F10108BD33C0009E075 /* AppController.m in Sources */ = {isa = PBXBuildFile; fileRef = 825D9F0F108BD33C0009E075 /* AppController.m */; };
 		825DAA97108C15C70009E075 /* weight.xml in Resources */ = {isa = PBXBuildFile; fileRef = 825DAA96108C15C70009E075 /* weight.xml */; };
+		82673D18129C9EB30067ADE1 /* FPLevelIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = 82673D17129C9EB30067ADE1 /* FPLevelIndicator.m */; };
 		82AE8CD41292F616002789A1 /* GData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82AE8B5A1292F4E0002789A1 /* GData.framework */; };
 		82AE8CF31292F764002789A1 /* GData.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 82AE8B5A1292F4E0002789A1 /* GData.framework */; };
 		82CCFE64108ECF2100212CE5 /* mail-sent.aiff in Resources */ = {isa = PBXBuildFile; fileRef = 82CCFE63108ECF2100212CE5 /* mail-sent.aiff */; };
@@ -58,6 +59,8 @@
 		825D9F0E108BD33C0009E075 /* AppController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppController.h; sourceTree = "<group>"; };
 		825D9F0F108BD33C0009E075 /* AppController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppController.m; sourceTree = "<group>"; };
 		825DAA96108C15C70009E075 /* weight.xml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = weight.xml; sourceTree = "<group>"; };
+		82673D16129C9EB30067ADE1 /* FPLevelIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FPLevelIndicator.h; sourceTree = "<group>"; };
+		82673D17129C9EB30067ADE1 /* FPLevelIndicator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FPLevelIndicator.m; sourceTree = "<group>"; };
 		82AE8B5A1292F4E0002789A1 /* GData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GData.framework; path = "../gdata-objectivec-client-read-only/Source/build/Debug/GData.framework"; sourceTree = SOURCE_ROOT; };
 		82CCFE63108ECF2100212CE5 /* mail-sent.aiff */ = {isa = PBXFileReference; lastKnownFileType = audio.aiff; path = "mail-sent.aiff"; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -85,6 +88,8 @@
 				825D9F0F108BD33C0009E075 /* AppController.m */,
 				82501D4F1262C86A00355019 /* PrefsController.h */,
 				82501D501262C86A00355019 /* PrefsController.m */,
+				82673D16129C9EB30067ADE1 /* FPLevelIndicator.h */,
+				82673D17129C9EB30067ADE1 /* FPLevelIndicator.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -238,6 +243,7 @@
 				825D9F06108BD2E40009E075 /* WiiRemoteDiscovery.m in Sources */,
 				825D9F10108BD33C0009E075 /* AppController.m in Sources */,
 				82501D511262C86A00355019 /* PrefsController.m in Sources */,
+				82673D18129C9EB30067ADE1 /* FPLevelIndicator.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
