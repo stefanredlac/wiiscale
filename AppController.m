@@ -116,6 +116,8 @@
 - (void)profileListFeedTicket:(GDataServiceTicket *)ticket
              finishedWithFeed:(GDataFeedBase *)feed
                         error:(NSError *)error {
+	
+	[ghspinner stopAnimation:self];
 		
 	if(!error) {
 		[profiles release];
@@ -126,19 +128,71 @@
 			[profilesPopUp addItemWithTitle:[[p title] stringValue]];
 		
 		NSString *profileName = [[NSUserDefaults standardUserDefaults] stringForKey:@"profileName"];
-		if(profileName.length && !![profilesPopUp itemWithTitle:profileName])
+		if(profileName.length && !![profilesPopUp itemWithTitle:profileName]) {
 			[profilesPopUp selectItemWithTitle:profileName];
+			[self profileChanged:profilesPopUp];
+		}
 		
 	} else {
 		[[NSAlert alertWithError:error] runModal]; // TODO: nicer errors?
 	}
-
-	[ghspinner stopAnimation:self];
 }
 
 - (IBAction)profileChanged:(id)sender {
 	[[NSUserDefaults standardUserDefaults] setValue:[(NSPopUpButton *)sender titleOfSelectedItem] forKey:@"profileName"];
-	[[NSUserDefaults standardUserDefaults] synchronize];	
+	[[NSUserDefaults standardUserDefaults] synchronize];
+	
+	[ghspinner startAnimation:self];
+
+	NSString *profileId = [[(GDataEntryHealthProfile *)[[profiles entries] objectAtIndex:[profilesPopUp indexOfSelectedItem]] content] stringValue];
+
+	GDataQueryGoogleHealth *query = [GDataQueryGoogleHealth queryWithFeedURL:[GDataServiceGoogleHealth profileFeedURLForProfileID:profileId]];
+	[query addCategoryFilterWithScheme:nil term:@"LABTEST"];	
+	[query addCategoryFilterWithScheme:kGDataHealthSchemeItem term:@"Height"];
+	[query setIsGrouped:YES];
+	[query setMaxResultsInGroup:1];
+	
+	[service fetchFeedWithQuery:query
+					   delegate:self
+			  didFinishSelector:@selector(profileDetailFeedTicket:finishedWithFeed:error:)];	
+	
+}
+
+- (void)profileDetailFeedTicket:(GDataServiceTicket *)ticket
+			   finishedWithFeed:(GDataFeedBase *)feed
+						  error:(NSError *)error {
+
+	[ghspinner stopAnimation:self];
+	
+	height_cm = 0;
+
+	for(GDataEntryHealthProfile *entry in feed.entries) {
+		
+		// Skip the no_id nodes
+		if(![entry.title.stringValue isEqualToString:@"Height"] || height_cm > 0)
+			continue;
+
+		NSXMLElement *elem = [[[entry continuityOfCareRecord] XMLDocument] rootElement];
+		NSArray *nodes_cm = [elem nodesForXPath:@"/ContinuityOfCareRecord/Body/Results/Result/Test[Description/Text='Height']/TestResult[Units/Unit='centimeters']/Value/text()" error:nil];
+		NSArray *nodes_in = [elem nodesForXPath:@"/ContinuityOfCareRecord/Body/Results/Result/Test[Description/Text='Height']/TestResult[Units/Unit='inches']/Value/text()" error:nil];
+
+		height_cm = ([nodes_cm count] > 0) ? [[[nodes_cm lastObject] XMLString] floatValue] : ([nodes_in count] > 0) ? [[[nodes_in lastObject] XMLString] floatValue] * 2.54 : 0;
+	}
+	
+	// TODO: Underweight
+	if(height_cm > 0) {
+		float bmi25 = 25.0 * pow(height_cm / 100.0, 2);
+		float bmi30 = 30.0 * pow(height_cm / 100.0, 2);
+		float bmi40 = 40.0 * pow(height_cm / 100.0, 2);
+		
+		[weightIndicator setWarningValue:bmi25]; // Max Normal
+		[weightIndicator setCriticalValue:bmi30]; // Max Overweight
+		[weightIndicator setMaxValue:bmi40]; // Obese Class III
+	} else {
+		[weightIndicator setWarningValue:150.0];
+		[weightIndicator setCriticalValue:150.0];
+		[weightIndicator setMaxValue:150.0];
+	}
 }
 
 - (void)sendToGoogleHealth:(id)sender {
@@ -263,7 +317,7 @@
 	}
 	
 	float trueWeight = lastWeight + tare;
-	[weightProgress setDoubleValue:trueWeight];
+	[weightIndicator setDoubleValue:trueWeight];
 	
 	if(trueWeight > 10.0) {
 		weightSamples[weightSampleIndex] = trueWeight;
