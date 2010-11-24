@@ -12,9 +12,9 @@
 		</object>
 		<object class="NSMutableArray" key="IBDocument.EditedObjectIDs">
 			<bool key="EncodedWithXMLCoder">YES</bool>
+			<integer value="57"/>
 			<integer value="372"/>
 			<integer value="584"/>
-			<integer value="57"/>
 		</object>
 		<object class="NSArray" key="IBDocument.PluginDependencies">
 			<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2397,6 +2397,7 @@
 					<string>594.IBPluginDependency</string>
 					<string>595.IBPluginDependency</string>
 					<string>596.IBPluginDependency</string>
+					<string>620.CustomClassName</string>
 					<string>620.IBPluginDependency</string>
 					<string>621.IBPluginDependency</string>
 					<string>81.IBEditorWindowLastContentRect</string>
@@ -2592,6 +2593,7 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>FPLevelIndicator</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>{{761, 635}, {248, 43}}</string>
@@ -2716,7 +2718,7 @@
 							<string>NSProgressIndicator</string>
 							<string>NSTextField</string>
 							<string>NSTextField</string>
-							<string>NSLevelIndicator</string>
+							<string>FPLevelIndicator</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -2779,13 +2781,21 @@
 							</object>
 							<object class="IBToOneOutletInfo">
 								<string key="name">weightIndicator</string>
-								<string key="candidateClassName">NSLevelIndicator</string>
+								<string key="candidateClassName">FPLevelIndicator</string>
 							</object>
 						</object>
 					</object>
 					<object class="IBClassDescriptionSource" key="sourceIdentifier">
 						<string key="majorKey">IBProjectSource</string>
 						<string key="minorKey">AppController.h</string>
+					</object>
+				</object>
+				<object class="IBPartialClassDescription">
+					<string key="className">FPLevelIndicator</string>
+					<string key="superclassName">NSLevelIndicator</string>
+					<object class="IBClassDescriptionSource" key="sourceIdentifier">
+						<string key="majorKey">IBProjectSource</string>
+						<string key="minorKey">FPLevelIndicator.h</string>
 					</object>
 				</object>
 				<object class="IBPartialClassDescription">

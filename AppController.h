@@ -4,6 +4,7 @@
 #import "WiiRemote.h"
 #import "WiiRemoteDiscovery.h"
 #import "GData/GDataHealth.h"
+#import "FPLevelIndicator.h"
 
 @interface AppController : NSWindowController<WiiRemoteDelegate, WiiRemoteDiscoveryDelegate> {
 	IBOutlet NSProgressIndicator* spinner;
@@ -11,7 +12,7 @@
 	IBOutlet NSTextField* weight;
 	IBOutlet NSTextField* status;
 	IBOutlet NSTextField* bbstatus;
-	IBOutlet NSLevelIndicator* weightIndicator;
+	IBOutlet FPLevelIndicator* weightIndicator;
 	IBOutlet NSPopUpButton* profilesPopUp;
 	IBOutlet NSMenuItem* fileConnect;
 	IBOutlet NSMenuItem* fileTare;

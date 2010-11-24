@@ -179,18 +179,19 @@
 		height_cm = ([nodes_cm count] > 0) ? [[[nodes_cm lastObject] XMLString] floatValue] : ([nodes_in count] > 0) ? [[[nodes_in lastObject] XMLString] floatValue] * 2.54 : 0;
 	}
 	
-	// TODO: Underweight
 	if(height_cm > 0) {
-		float bmi25 = 25.0 * pow(height_cm / 100.0, 2);
-		float bmi30 = 30.0 * pow(height_cm / 100.0, 2);
-		float bmi40 = 40.0 * pow(height_cm / 100.0, 2);
+		float height_m_2 = pow(height_cm / 100.0, 2);
 		
-		[weightIndicator setWarningValue:bmi25]; // Max Normal
-		[weightIndicator setCriticalValue:bmi30]; // Max Overweight
-		[weightIndicator setMaxValue:bmi40]; // Obese Class III
+		[weightIndicator setLowCriticalValue:16.5 * height_m_2]; // Min Underweight
+		[weightIndicator setLowWarningValue:18.5 * height_m_2]; // Min Normal
+		[weightIndicator setHighWarningValue:25.0 * height_m_2]; // Max Normal
+		[weightIndicator setHighCriticalValue:30.0 * height_m_2]; // Max Overweight
+		[weightIndicator setMaxValue:40.0 * height_m_2]; // Obese Class III
 	} else {
-		[weightIndicator setWarningValue:150.0];
-		[weightIndicator setCriticalValue:150.0];
+		[weightIndicator setLowCriticalValue:0.0];
+		[weightIndicator setLowWarningValue:0.0];
+		[weightIndicator setHighWarningValue:150.0];
+		[weightIndicator setHighCriticalValue:150.0];
 		[weightIndicator setMaxValue:150.0];
 	}
 }
