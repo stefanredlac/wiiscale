@@ -825,19 +825,19 @@
 								<int key="NSPeriodicInterval">25</int>
 							</object>
 						</object>
-						<object class="NSLevelIndicator" id="1043996287">
+						<object class="NSLevelIndicator" id="1070452033">
 							<reference key="NSNextResponder" ref="439893737"/>
 							<int key="NSvFlags">268</int>
 							<string key="NSFrame">{{20, 45}, {326, 16}}</string>
 							<reference key="NSSuperview" ref="439893737"/>
 							<bool key="NSEnabled">YES</bool>
-							<object class="NSLevelIndicatorCell" key="NSCell" id="935980881">
+							<object class="NSLevelIndicatorCell" key="NSCell" id="786512919">
 								<int key="NSCellFlags">130560</int>
 								<int key="NSCellFlags2">0</int>
-								<reference key="NSControlView" ref="1043996287"/>
-								<double key="NSMaxValue">300</double>
-								<double key="NSWarningValue">200</double>
-								<double key="NSCriticalValue">250</double>
+								<reference key="NSControlView" ref="1070452033"/>
+								<double key="NSMaxValue">150</double>
+								<double key="NSWarningValue">150</double>
+								<double key="NSCriticalValue">150</double>
 								<int key="NSIndicatorStyle">1</int>
 							</object>
 						</object>
@@ -1434,7 +1434,7 @@
 					<object class="IBOutletConnection" key="connection">
 						<string key="label">weightIndicator</string>
 						<reference key="source" ref="622338139"/>
-						<reference key="destination" ref="1043996287"/>
+						<reference key="destination" ref="1070452033"/>
 					</object>
 					<int key="connectionID">622</int>
 				</object>
@@ -1939,7 +1939,7 @@
 							<reference ref="676595120"/>
 							<reference ref="590869237"/>
 							<reference ref="957428242"/>
-							<reference ref="1043996287"/>
+							<reference ref="1070452033"/>
 						</object>
 						<reference key="parent" ref="972006081"/>
 					</object>
@@ -2197,17 +2197,17 @@
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">620</int>
-						<reference key="object" ref="1043996287"/>
+						<reference key="object" ref="1070452033"/>
 						<object class="NSMutableArray" key="children">
 							<bool key="EncodedWithXMLCoder">YES</bool>
-							<reference ref="935980881"/>
+							<reference ref="786512919"/>
 						</object>
 						<reference key="parent" ref="439893737"/>
 					</object>
 					<object class="IBObjectRecord">
 						<int key="objectID">621</int>
-						<reference key="object" ref="935980881"/>
-						<reference key="parent" ref="1043996287"/>
+						<reference key="object" ref="786512919"/>
+						<reference key="parent" ref="1070452033"/>
 					</object>
 				</object>
 			</object>
@@ -2703,7 +2703,6 @@
 							<string>status</string>
 							<string>weight</string>
 							<string>weightIndicator</string>
-							<string>weightProgress</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2718,7 +2717,6 @@
 							<string>NSTextField</string>
 							<string>NSTextField</string>
 							<string>NSLevelIndicator</string>
-							<string>NSProgressIndicator</string>
 						</object>
 					</object>
 					<object class="NSMutableDictionary" key="toOneOutletInfosByName">
@@ -2736,7 +2734,6 @@
 							<string>status</string>
 							<string>weight</string>
 							<string>weightIndicator</string>
-							<string>weightProgress</string>
 						</object>
 						<object class="NSMutableArray" key="dict.values">
 							<bool key="EncodedWithXMLCoder">YES</bool>
@@ -2783,10 +2780,6 @@
 							<object class="IBToOneOutletInfo">
 								<string key="name">weightIndicator</string>
 								<string key="candidateClassName">NSLevelIndicator</string>
-							</object>
-							<object class="IBToOneOutletInfo">
-								<string key="name">weightProgress</string>
-								<string key="candidateClassName">NSProgressIndicator</string>
 							</object>
 						</object>
 					</object>
